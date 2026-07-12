@@ -11,18 +11,12 @@ public class MoveZeros {
         int n = nums.length;
         int left = 0;
         int right = 0;
-        while (left<n && nums[left]!=0){
-            left++;
-        }
-        right = left;
-        while(right<n){
+        for (right = 0;  right < n; right++) {
             if(nums[right]!=0){
-                nums[left] = nums[right];
-                nums[right] = 0;
-                right++;
+                int temp = nums[right];
+                nums[right] = nums[left];
+                nums[left] = temp;
                 left++;
-            }else{
-                right++;
             }
         }
     }
